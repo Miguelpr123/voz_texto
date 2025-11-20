@@ -43,8 +43,10 @@ function descargarTexto() {
 
 function iniciarReconocimiento() {
   rec.start();
+  document.getElementById("recordingIndicator").classList.add("active");
 }
 
 function detenerReconocimiento() {
   rec.stop();
+  document.getElementById("recordingIndicator").classList.remove("active");
 }
