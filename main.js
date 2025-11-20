@@ -50,3 +50,12 @@ function detenerReconocimiento() {
   rec.stop();
   document.getElementById("recordingIndicator").classList.remove("active");
 }
+
+function escucharTexto() {
+  const texto = document.getElementById("texto").value;
+  if (texto.trim() === "") {
+    alert("No hay texto para escuchar");
+    return;
+  }
+  speechSynthesis.speak(new SpeechSynthesisUtterance(texto));
+}
