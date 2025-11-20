@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reconocimiento de voz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Reconocimiento de Voz</h1>
     
-    <button onclick="iniciarReconocimiento()">Iniciar</button>
-    <button onclick="detenerReconocimiento()">Detener</button>
-    <button onclick="reset()">Reset</button>
-    <div id="texto"></div>
+    <div class="controls">
+        <button onclick="iniciarReconocimiento()">Iniciar</button>
+        <button onclick="detenerReconocimiento()">Detener</button>
+        <button onclick="reset()">Reset</button>
+        <button onclick="copiarTexto()">Copiar</button>
+        <button onclick="descargarTexto()">Descargar</button>
+    </div>
+    
+    <textarea id="texto" placeholder="El texto reconocido aparecerá aquí y podrás editarlo..."></textarea>
 
     <script src="main.js" ></script>
 </body>

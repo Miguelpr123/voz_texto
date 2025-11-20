@@ -12,13 +12,33 @@ if (!("webkitSpeechRecognition" in window)) {
 
 function iniciar(event) {
   for (let i = event.resultIndex; i < event.results.length; i++) {
-    document.getElementById("texto").innerHTML +=
+    document.getElementById("texto").value +=
       " " + event.results[i][0].transcript;
   }
 }
 
 function reset() {
-  document.getElementById("texto").innerHTML = "";
+  document.getElementById("texto").value = "";
+}
+
+function copiarTexto() {
+  const texto = document.getElementById("texto");
+  texto.select();
+  document.execCommand("copy");
+  alert("Texto copiado al portapapeles");
+}
+
+function descargarTexto() {
+  const texto = document.getElementById("texto").value;
+  const blob = new Blob([texto], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "transcripcion.txt";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
 
 function iniciarReconocimiento() {

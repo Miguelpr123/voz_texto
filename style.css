@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+.controls {
+  margin-bottom: 20px;
+}
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 14px;
+}
+button:hover {
+  background-color: #45a049;
+}
+#texto {
+  width: 100%;
+  min-height: 300px;
+  padding: 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+#texto:focus {
+  outline: none;
+  border-color: #4caf50;
+}
